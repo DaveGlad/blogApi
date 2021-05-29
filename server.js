@@ -3,7 +3,10 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
+
+//Routes
 const authRoute = require('./routes/auth')
+const useRoute = require('./routes/users')
 
 const app = express()
 
@@ -24,5 +27,6 @@ mongoose.connect(process.env.MONGODB_URL,
 
 // app.use('/', (req, res) => res.send('Accueil'))
 app.use('/api/auth/', authRoute)
+app.use('/api/users/', useRoute)
 
 app.listen(8080, () => console.log('server is run port 8080'))

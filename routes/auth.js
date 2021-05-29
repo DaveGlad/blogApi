@@ -3,7 +3,6 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 
 //Register
-
 router.post('/register', async (req, res) => {
     try {
         //Hashed Password
@@ -21,7 +20,6 @@ router.post('/register', async (req, res) => {
         res.status(500).json(err)
     }
 })
-
 
 //Login
 
